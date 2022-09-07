@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .subdiv {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.subdiv .subtextT {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.subdiv .subtextT::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+.subdiv:hover .subtextT, .subdiv:hover .subtextB, .subdiv:hover .subtextR, .subdiv:hover .subtextL {
+  visibility: visible;
+  opacity: 1;
+}
+        #main{
+            margin: 150px 50px 0px 250px;
+            display: flex;
+            /* border: 1px solid aqua; */
+            
+        }
+        #main >div{
+            
+            text-align: center;
+            background-color: rgb(11, 85, 104);
+            /* height: 35px; */
+            width: auto;
+            padding: 10px 15px 10px 15px;
+            margin: 10px;
+            border: 1px solid red;
+            border-radius: 10px;
+        }
+
+        /* bottom */
+        .subdiv .subtextB {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  margin-left: -60px;
+}
+
+.subdiv .subtextB::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent black transparent;
+}
+
+/* .subdiv:hover .subtextB {
+    visibility: visible;
+} */
+/* rigth */
+
+.subdiv .subtextR {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  left: 110%;
+}
+
+.subdiv .subtextR::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent black transparent transparent;
+}
+/* .subdiv:hover .subtextR,.subdiv:hover .subtextL {
+  visibility: visible;
+} */
+/* left */
+.subdiv .subtextL {
+  visibility: hidden;
+  width: 120px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  right: 110%;
+}
+
+.subdiv .subtextL::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent black;
+}
+/* .subdiv:hover .subtextL {
+  visibility: visible;
+} */
+
+
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div class="subdiv">Left
+            <span class="subtextL" >Left</span>
+          </div>
+          <div class="subdiv">Top
+            <span class="subtextT" >Top</span>
+          </div>
+          <div class="subdiv">bottom
+            <span class="subtextB"  >bottom</span>
+          </div>
+          <div class="subdiv">Right
+            <span class="subtextR" >Right</span>
+          </div>
+        
+    </div>
+</body>
+</html>
